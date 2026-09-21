@@ -80,6 +80,7 @@ scripts/                   Supporting scripts
 ## Documentation
 
 - [Installation and setup](docs/SETUP.md)
+- [API key configuration](docs/SETUP.md#get-an-openai-api-key)
 - [Feature and screen documentation](docs/README.md)
 - [API reference](docs/api/README.md)
 - [Authentication](docs/authentication.md)

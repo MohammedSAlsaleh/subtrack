@@ -62,6 +62,49 @@ Both AI variables are required at startup, even if you do not open the advisor s
 
 These instructions explicitly export variables. Creating an `.env` file alone does not guarantee that the API scripts load it. Keep credentials outside Git and never put secrets in `EXPO_PUBLIC_*` variables.
 
+### Get an OpenAI API key
+
+For a direct OpenAI connection:
+
+1. Sign in to the [OpenAI API platform](https://platform.openai.com/).
+2. Open [API keys](https://platform.openai.com/api-keys), choose the intended project, and create a secret key. Save it privately.
+3. Check your project’s API billing and available credits before making a request. A key alone does not guarantee available quota.
+4. Use `https://api.openai.com/v1` as the base URL. This is a public address, not an account-specific secret.
+
+See the [official OpenAI quickstart](https://developers.openai.com/api/docs/quickstart) for API key setup.
+
+### Store credentials in a local file
+
+A fresh clone intentionally contains no `.env` file. Create a file named **`.env` in the repository root**, beside `package.json`, and add:
+
+```dotenv
+AI_INTEGRATIONS_OPENAI_BASE_URL=https://api.openai.com/v1
+AI_INTEGRATIONS_OPENAI_API_KEY=replace-with-your-own-secret-key
+```
+
+Replace the placeholder in your local editor. Do not paste a real key into the README, GitHub issues, screenshots, or chat. Confirm the file is ignored with `git check-ignore .env`; it should print `.env`. Never force-add this file to Git.
+
+This file holds the two AI settings only. Keep the database, port, and session-secret exports from step 3 in the API terminal. To explicitly load the root `.env` with Node.js 24, build and start the server from the repository root:
+
+```bash
+pnpm --filter @workspace/api-server run build
+node --env-file=.env --enable-source-maps artifacts/api-server/dist/index.mjs
+```
+
+Use these commands instead of the API `run dev` command in step 4 when your AI credentials are stored in `.env`. Existing exported environment variables take precedence over values in the file; clear stale AI exports if you intend to use the file’s values.
+
+For Replit’s built-in AI integration, use the base URL and credentials configured by that integration, rather than assuming its key works with the direct OpenAI URL. Keep deployment secrets in the hosting environment’s secret settings.
+
+### AI connection troubleshooting
+
+| Error | What to check |
+| --- | --- |
+| Missing AI environment variable | Fill both settings and start the server with the explicit `.env` loading command above |
+| Invalid API key / HTTP 401 | Verify the key belongs to the selected provider and has the necessary permissions |
+| `credit_balance_exhausted` / HTTP 429 | Check API billing and replenish the available balance before retrying |
+| Other HTTP 429 errors | Inspect the provider error code; request-rate limits and exhausted quota require different remedies |
+| Model unavailable | Confirm your project can access the model configured in the advisor route |
+
 ## 4. Initialize the schema and start the API
 
 In the terminal with the API environment configured:

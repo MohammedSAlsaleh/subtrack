@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="artifacts/mobile/assets/images/icon.png" alt="SubTrack app icon" width="96" />
+  <img src="app-icon.png" alt="SubTrack app icon" width="160" />
   <h1>SubTrack</h1>
   <p><strong>Your subscriptions, bills, and financial goals in one place.</strong></p>
   <p>A personal finance app built around Saudi Riyal spending, with Arabic and English support.</p>

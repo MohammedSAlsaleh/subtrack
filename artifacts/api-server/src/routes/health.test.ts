@@ -183,7 +183,7 @@ describe("Auth routes — 503 on transient DB error", () => {
     // Replace the mock db with one that throws transiently
     const { db } = await import("@workspace/db");
     const transient = Object.assign(new Error("ECONNRESET"), { code: "ECONNRESET" });
-    (db as { then: unknown }).then = (resolve: (v: unknown) => unknown, reject: (e: unknown) => unknown) =>
+    (db as unknown as { then: unknown }).then = (resolve: (v: unknown) => unknown, reject: (e: unknown) => unknown) =>
       Promise.reject(transient).then(resolve, reject);
 
     const res = await request(app)
@@ -191,7 +191,7 @@ describe("Auth routes — 503 on transient DB error", () => {
       .send({ email: "user@example.com", passwordHash: "hash" });
 
     // Restore
-    (db as { then: unknown }).then = (resolve: (v: unknown) => unknown, reject: (e: unknown) => unknown) =>
+    (db as unknown as { then: unknown }).then = (resolve: (v: unknown) => unknown, reject: (e: unknown) => unknown) =>
       Promise.resolve([]).then(resolve, reject);
 
     expect(res.status).toBe(503);
@@ -210,7 +210,7 @@ describe("Premium routes — 503 on transient DB error", () => {
 
     const { db } = await import("@workspace/db");
     const transient = Object.assign(new Error("too many clients already"), {});
-    (db as { then: unknown }).then = (resolve: (v: unknown) => unknown, reject: (e: unknown) => unknown) =>
+    (db as unknown as { then: unknown }).then = (resolve: (v: unknown) => unknown, reject: (e: unknown) => unknown) =>
       Promise.reject(transient).then(resolve, reject);
 
     const res = await request(app)
@@ -218,7 +218,7 @@ describe("Premium routes — 503 on transient DB error", () => {
       .set("Authorization", `Bearer ${token}`);
 
     // Restore
-    (db as { then: unknown }).then = (resolve: (v: unknown) => unknown, reject: (e: unknown) => unknown) =>
+    (db as unknown as { then: unknown }).then = (resolve: (v: unknown) => unknown, reject: (e: unknown) => unknown) =>
       Promise.resolve([]).then(resolve, reject);
 
     expect(res.status).toBe(503);

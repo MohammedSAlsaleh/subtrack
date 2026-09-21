@@ -64,7 +64,7 @@ export function sanitizeOpenAIError(err: unknown): string {
 // }
 // Streams SSE: data: {"content":"..."}\n\n  …  data: {"done":true}\n\n
 router.post("/agent/chat", async (req, res) => {
-  const { messages = [], context = {} } = req.body as {
+  const { messages = [], context } = req.body as {
       messages: { role: "user" | "assistant"; content: string }[];
       context: {
         income?: number;
@@ -82,9 +82,9 @@ router.post("/agent/chat", async (req, res) => {
     // ── Validate required numeric context fields ───────────────────────────
     const REQUIRED_NUMERIC = ["monthlySubTotal", "monthlyBillTotal", "monthlyLoanPayments"] as const;
     const missing = REQUIRED_NUMERIC.filter(
-      (k) => typeof (context as Record<string, unknown>)[k] !== "number",
+      (k) => typeof context?.[k] !== "number",
     );
-    if (missing.length > 0) {
+    if (!context || missing.length > 0) {
       res.status(400).json({
         error: `Missing or non-numeric context field(s): ${missing.join(", ")}. Financial data must be attached before using the AI advisor.`,
       });

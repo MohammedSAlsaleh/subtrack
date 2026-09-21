@@ -88,7 +88,7 @@ export default function Slide09() {
 
           {/* Budgets card mockup */}
           <div style={{ marginTop: '2.5vh', backgroundColor: '#111827', border: '1px solid rgba(0,217,166,0.18)', borderRadius: '0.8vw', padding: '1.2vh 1.2vw' }}>
-            {[['Streaming','SAR 284 / 300',95,'#EF4444'],['Telecom','SAR 180 / 300',60,'#F59E0B'],['Food delivery','SAR 320 / 500',64,'#00D9A6'],['Loans','SAR 4,200 / 5,000',84,'#F59E0B']].map(([n,lbl,pct,c]) => (
+            {([['Streaming','SAR 284 / 300',95,'#EF4444'],['Telecom','SAR 180 / 300',60,'#F59E0B'],['Food delivery','SAR 320 / 500',64,'#00D9A6'],['Loans','SAR 4,200 / 5,000',84,'#F59E0B']] as const).map(([n,lbl,pct,c]) => (
               <div key={n} style={{ marginBottom: '1.2vh' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.4vh' }}>
                   <div style={{ fontSize: '0.85vw', fontWeight: 600 }}>{n}</div>

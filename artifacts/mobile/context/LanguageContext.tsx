@@ -30,7 +30,7 @@ interface LanguageContextValue {
   setLanguage: (lang: Language) => Promise<void>;
   t: (key: string, vars?: Record<string, string | number>) => string;
   isRTL: boolean;
-  fonts: typeof FONTS['en'];
+  fonts: typeof FONTS[Language];
 }
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);

@@ -54,7 +54,7 @@ Use **Node.js 24** and **pnpm 10**, matching the repository’s CI configuration
 ```bash
 git clone https://github.com/MohammedSAlsaleh/subtrack.git
 cd subtrack
-npm install --global pnpm@10
+npm install --global pnpm@10.34.5
 pnpm install --frozen-lockfile
 ```
 

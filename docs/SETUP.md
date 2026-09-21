@@ -18,7 +18,7 @@ The commands use a POSIX shell (macOS, Linux, or WSL on Windows). The API develo
 ```bash
 git clone https://github.com/MohammedSAlsaleh/subtrack.git
 cd subtrack
-npm install --global pnpm@10
+npm install --global pnpm@10.34.5
 node --version
 pnpm --version
 pnpm install --frozen-lockfile
@@ -138,4 +138,4 @@ A fresh installation may display different data or empty states compared with th
 
 ## Validation scope
 
-This guide was checked against source code, package scripts, and CI configuration. A fresh end-to-end installation with a provisioned database and AI credentials was not performed for this documentation update. Production deployment requires separate configuration and review.
+The frozen-lockfile install, API tests, workspace type checks, mobile regression scripts, API build, and web export are validated locally on macOS ARM64 with Node.js 24 and pnpm 10.34.5. API tests use local placeholder AI configuration; they do not require real provider credentials. CI also checks tests and types on Linux and macOS. Real database provisioning, registration/login against PostgreSQL, and live AI responses remain unverified. Production deployment requires separate configuration and review.

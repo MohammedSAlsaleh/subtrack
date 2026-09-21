@@ -5,9 +5,12 @@ on:
   pull_request:
 
 jobs:
-  sql-injection-tests:
-    name: SQL Injection Tests
-    runs-on: ubuntu-latest
+  validation:
+    name: Tests and type checks (${{ matrix.os }})
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
 
     steps:
       - name: Checkout
@@ -16,7 +19,7 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 10
+          version: 10.34.5
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -27,5 +30,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Run SQL injection tests
+      - name: Run API tests
         run: pnpm --filter @workspace/api-server test
+
+      - name: Check TypeScript
+        run: pnpm run typecheck
+
+      - name: Run mobile regression scripts
+        run: node --test artifacts/mobile/__tests__/*.test.js

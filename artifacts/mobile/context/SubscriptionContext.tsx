@@ -143,8 +143,9 @@ export function SubscriptionProvider({ children }: { children: React.ReactNode }
           await AsyncStorage.removeItem(STORAGE_KEY_SUBS);
         }
       } catch (e) {
-        subsRef.current = SAMPLE_SUBSCRIPTIONS;
-        setSubscriptions(SAMPLE_SUBSCRIPTIONS);
+        // Templates lack IDs and billing dates; never restore them as user data.
+        subsRef.current = [];
+        setSubscriptions([]);
       } finally {
         setLoading(false);
       }

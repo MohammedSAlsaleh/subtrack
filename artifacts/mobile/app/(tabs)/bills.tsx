@@ -220,7 +220,7 @@ export default function BillsScreen() {
                 <FieldInput
                   placeholder={t('bills_name_placeholder')}
                   value={form.name}
-                  onChangeText={v => { setForm(f => ({ ...f, name: v })); setErrors(e => ({ ...e, name: undefined })); }}
+                  onChangeText={(v: string) => { setForm(f => ({ ...f, name: v })); setErrors(e => ({ ...e, name: undefined })); }}
                   icon="file-text" hasError={!!errors.name} autoCapitalize="words"
                   fontFamily={fonts.regular}
                 />
@@ -258,7 +258,7 @@ export default function BillsScreen() {
                         placeholder="0.00"
                         placeholderTextColor={colors.mutedForeground}
                         value={form.amount}
-                        onChangeText={v => { setForm(f => ({ ...f, amount: v.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1') })); setErrors(e => ({ ...e, amount: undefined })); }}
+                        onChangeText={(v: string) => { setForm(f => ({ ...f, amount: v.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1') })); setErrors(e => ({ ...e, amount: undefined })); }}
                         keyboardType="decimal-pad"
                       />
                     </View>
@@ -269,7 +269,7 @@ export default function BillsScreen() {
                     <FieldInput
                       placeholder={t('bills_due_day_placeholder')}
                       value={form.dueDayOfMonth}
-                      onChangeText={v => { setForm(f => ({ ...f, dueDayOfMonth: v.replace(/\D/g, '').slice(0, 2) })); setErrors(e => ({ ...e, dueDayOfMonth: undefined })); }}
+                      onChangeText={(v: string) => { setForm(f => ({ ...f, dueDayOfMonth: v.replace(/\D/g, '').slice(0, 2) })); setErrors(e => ({ ...e, dueDayOfMonth: undefined })); }}
                       icon="calendar" hasError={!!errors.dueDayOfMonth} keyboardType="number-pad"
                       fontFamily={fonts.regular}
                     />

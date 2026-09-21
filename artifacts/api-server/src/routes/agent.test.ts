@@ -23,7 +23,7 @@ import { sanitizeOpenAIError } from "./agent.js";
 // so the mock object is available when the factory closure runs.
 
 const mockCreate = vi.hoisted(() =>
-  vi.fn(async () =>
+  vi.fn(async (_body?: unknown, _options?: { signal?: AbortSignal }): Promise<AsyncGenerator<{ choices: { delta: { content?: string } }[] }>> =>
     (async function* () {
       yield { choices: [{ delta: { content: "ok" } }] };
     })(),
@@ -562,7 +562,7 @@ describe("POST /api/agent/chat — inactivity timeout", () => {
     // abortController.abort() actually interrupts the for-await loop —
     // matching what the real OpenAI SDK does.
     mockCreate.mockImplementation(
-      async ({ signal }: { signal?: AbortSignal } = {}) =>
+      async (_body, { signal } = {}) =>
         (async function* () {
           // Yield one chunk immediately so SSE headers are already flushed,
           // then stall until the abort fires.

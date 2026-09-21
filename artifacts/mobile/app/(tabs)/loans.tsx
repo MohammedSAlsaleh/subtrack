@@ -659,7 +659,7 @@ function PayoffSimulatorSheet({ loan, visible, onClose }: { loan: Loan | null; v
                 placeholder="0"
                 placeholderTextColor={colors.mutedForeground}
                 value={extraPayment}
-                onChangeText={v => setExtraPayment(v.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1'))}
+                onChangeText={(v: string) => setExtraPayment(v.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1'))}
                 keyboardType="decimal-pad"
               />
               {extraPayment !== '' && (
@@ -1336,7 +1336,7 @@ export default function LoansScreen() {
                 </View>
                 <View style={{ flex: 1 }}>
                   <FLabel label={t('loans_next_payment_date')} error={errors.nextPaymentDate} />
-                  <FInput placeholder="DD/MM/YYYY" value={form.nextPaymentDate} onChangeText={v => set('nextPaymentDate')(fmtDateInput(v))}
+                  <FInput placeholder="DD/MM/YYYY" value={form.nextPaymentDate} onChangeText={(v: string) => set('nextPaymentDate')(fmtDateInput(v))}
                     keyboardType="number-pad" icon="calendar"
                     focused={focused === 'nextPaymentDate'} onFocus={foc('nextPaymentDate')} onBlur={blr} hasError={!!errors.nextPaymentDate} />
                 </View>

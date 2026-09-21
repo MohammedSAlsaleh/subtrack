@@ -8,6 +8,7 @@ SubTrack is a personal finance mobile app built for the Saudi Arabian market. It
 
 | Document | Description |
 |---|---|
+| [Installation and setup](./SETUP.md) | Install, configure, and run SubTrack locally |
 | [Architecture](./architecture.md) | Monorepo layout, tech stack, data flow |
 | [Screens Reference](./screens.md) | Every screen, its route, and what it renders |
 | [Data Models](./data-models.md) | TypeScript interfaces for every entity |
@@ -32,11 +33,11 @@ SubTrack is a personal finance mobile app built for the Saudi Arabian market. It
 
 | Property | Value |
 |---|---|
-| Platform | iOS · Android · Web (Expo SDK 53) |
+| Platform | iOS · Android · Web (Expo SDK 54) |
 | Primary market | Kingdom of Saudi Arabia |
 | Currency | SAR (Saudi Riyal) |
 | Languages | English · Arabic (RTL) |
-| Backend | Node.js / Fastify + PostgreSQL |
-| AI | OpenAI GPT-4o (streaming SSE) |
+| Backend | Node.js / Express + PostgreSQL |
+| AI | Configured OpenAI-compatible provider (streaming SSE) |
 | Open banking | Lean Technologies |
 | Monetization | Freemium — SAR 14.99 / month |

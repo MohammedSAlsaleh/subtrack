@@ -3,12 +3,12 @@
   <h1>SubTrack</h1>
   <p><strong>Your subscriptions, bills, and financial goals in one place.</strong></p>
   <p>A personal finance app built around Saudi Riyal spending, with Arabic and English support.</p>
-  <p><a href="https://subtrack-budget.replit.app/">Open the live app</a> · <a href="docs/README.md">Explore the documentation</a> · <a href="#run-locally">Run locally</a></p>
+  <p><a href="https://subtrack-budget.replit.app/">Open the live app</a> · <a href="docs/README.md">Explore the documentation</a> · <a href="docs/SETUP.md">Installation &amp; setup</a></p>
 </div>
 
 ![SubTrack dashboard with monthly outflow and upcoming payments](docs/screenshots/dashboard.png)
 
-## A clearer view of your money
+## Overview
 
 SubTrack brings recurring payments and savings planning into a single Expo / React Native app, with a web experience available through the live link above.
 
@@ -37,7 +37,7 @@ Review monthly outflow and the split between subscriptions, fixed bills, and loa
 
 ![SubTrack analytics screen with spending totals and a category breakdown](docs/screenshots/analytics.png)
 
-## Built with
+## Technology
 
 | Layer | Technology |
 | --- | --- |
@@ -47,30 +47,22 @@ Review monthly outflow and the split between subscriptions, fixed bills, and loa
 | Workspace | pnpm |
 | AI integration | OpenAI-compatible integration configured through environment variables |
 
-## Run locally
+## Installation
 
-Clone the repository, then install dependencies:
+Use **Node.js 24** and **pnpm 10**, matching the repository’s CI configuration.
 
 ```bash
 git clone https://github.com/MohammedSAlsaleh/subtrack.git
 cd subtrack
-corepack enable
-pnpm install
+npm install --global pnpm@10
+pnpm install --frozen-lockfile
 ```
 
-For local Expo development, configure `EXPO_PUBLIC_API_URL` to an API URL reachable from your device, then run:
+Continue with the **[installation and setup guide](docs/SETUP.md)** for PostgreSQL setup, environment configuration, app startup, health checks, and troubleshooting on macOS, Linux, and Windows through WSL.
 
-```bash
-pnpm --filter @workspace/mobile exec expo start --port 8081
-```
+## Project status
 
-In another terminal, configure the API environment and start it:
-
-```bash
-pnpm --filter @workspace/api-server run dev
-```
-
-The API requires `PORT`, `DATABASE_URL`, `SESSION_SECRET`, `AI_INTEGRATIONS_OPENAI_BASE_URL`, and `AI_INTEGRATIONS_OPENAI_API_KEY`, plus database schema setup. Keep secret values outside Git. Set these variables in the API process environment; the scripts do not automatically guarantee loading an `.env` file. The mobile `dev` script assumes Replit, so use the Expo command above for local development.
+The screenshots show the deployed web experience. Some features require Premium, bank linking includes simulated behavior, and AI functionality requires a configured provider. This repository contains source code, not an app-store installation package.
 
 ## Repository map
 
@@ -85,8 +77,9 @@ docs/                      Feature documentation and screenshots
 scripts/                   Supporting scripts
 ```
 
-## Learn more
+## Documentation
 
+- [Installation and setup](docs/SETUP.md)
 - [Feature and screen documentation](docs/README.md)
 - [API reference](docs/api/README.md)
 - [Authentication](docs/authentication.md)

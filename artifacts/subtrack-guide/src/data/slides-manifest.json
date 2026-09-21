@@ -1,0 +1,90 @@
+[
+  {
+    "id": "b2000001-0000-4000-a000-000000000001",
+    "position": 1,
+    "filepath": "src/pages/slides/Slide01.tsx",
+    "title": "Welcome to SubTrack",
+    "description": "Cover — your personal subscription & finance tracker for Saudi Arabia",
+    "speakerNotes": ""
+  },
+  {
+    "id": "b2000001-0000-4000-a000-000000000002",
+    "position": 2,
+    "filepath": "src/pages/slides/Slide02.tsx",
+    "title": "Create Your Account",
+    "description": "How to sign up, sign in, and switch language",
+    "speakerNotes": ""
+  },
+  {
+    "id": "b2000001-0000-4000-a000-000000000003",
+    "position": 3,
+    "filepath": "src/pages/slides/Slide03.tsx",
+    "title": "Your Dashboard",
+    "description": "The financial command center — hero card, stats, goals",
+    "speakerNotes": ""
+  },
+  {
+    "id": "b2000001-0000-4000-a000-000000000004",
+    "position": 4,
+    "filepath": "src/pages/slides/Slide04.tsx",
+    "title": "Navigating the App",
+    "description": "The floating menu button and all seven sections",
+    "speakerNotes": ""
+  },
+  {
+    "id": "b2000001-0000-4000-a000-000000000005",
+    "position": 5,
+    "filepath": "src/pages/slides/Slide05.tsx",
+    "title": "Tracking Subscriptions",
+    "description": "Viewing, adding, editing, and suggested subscriptions",
+    "speakerNotes": ""
+  },
+  {
+    "id": "b2000001-0000-4000-a000-000000000006",
+    "position": 6,
+    "filepath": "src/pages/slides/Slide06.tsx",
+    "title": "Managing Bills",
+    "description": "Tracking one-time and recurring bills with due-date alerts",
+    "speakerNotes": ""
+  },
+  {
+    "id": "b2000001-0000-4000-a000-000000000007",
+    "position": 7,
+    "filepath": "src/pages/slides/Slide07.tsx",
+    "title": "Understanding Your Spending",
+    "description": "Analytics — category breakdown and month-over-month trends",
+    "speakerNotes": ""
+  },
+  {
+    "id": "b2000001-0000-4000-a000-000000000008",
+    "position": 8,
+    "filepath": "src/pages/slides/Slide08.tsx",
+    "title": "Savings Goals & Loans",
+    "description": "Goals, contributions, loans, and the payoff simulator",
+    "speakerNotes": ""
+  },
+  {
+    "id": "b2000001-0000-4000-a000-000000000009",
+    "position": 9,
+    "filepath": "src/pages/slides/Slide09.tsx",
+    "title": "Settings & Personalization",
+    "description": "Bank connection, theme, language, income, and Premium",
+    "speakerNotes": ""
+  },
+  {
+    "id": "b2000001-0000-4000-a000-000000000010",
+    "position": 10,
+    "filepath": "src/pages/slides/Slide10.tsx",
+    "title": "Your AI Budget Agent",
+    "description": "Premium AI assistant with full financial context — ask anything in Arabic or English",
+    "speakerNotes": ""
+  },
+  {
+    "id": "b2000001-0000-4000-a000-000000000011",
+    "position": 11,
+    "filepath": "src/pages/slides/Slide11.tsx",
+    "title": "You're All Set",
+    "description": "Closing — first steps to take control of your finances",
+    "speakerNotes": ""
+  }
+]

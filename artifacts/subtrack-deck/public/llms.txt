@@ -1,0 +1,7 @@
+# SubTrack
+
+> SubTrack is a subscription and personal finance management app built for Saudi Arabia.
+> Track subscriptions, bills, BNPL loans, and savings goals in SAR with full Arabic RTL support.
+
+## Deck
+- SubTrack Product Deck: /subtrack-deck/

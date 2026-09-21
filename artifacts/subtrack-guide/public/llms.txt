@@ -1,0 +1,7 @@
+# SubTrack User Guide
+
+> Step-by-step guide for using SubTrack on iOS and Android.
+> Topics: adding subscriptions, managing BNPL loans (Tabby, Tamara), setting budgets, savings goals with Hijri date support.
+
+## Guide
+- Full User Guide: /subtrack-guide/

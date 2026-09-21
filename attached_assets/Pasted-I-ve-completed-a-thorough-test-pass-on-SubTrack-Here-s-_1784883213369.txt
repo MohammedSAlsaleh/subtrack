@@ -1,0 +1,27 @@
+I've completed a thorough test pass on SubTrack. Here's what I found, organized by severity.
+
+**Functional bugs**
+
+The clearest bug is a date calculation error for monthly subscriptions added through the main "Add Subscription" form: entering a start date of July 24, 2026 produced a "Next Billing" of August 23, 2026 (30 days later) instead of August 24 (a true one-month cycle). I confirmed this is inconsistent by adding a subscription through the "Suggested Subscriptions" quick-add button instead, which correctly calculated August 24 for the same July 24 start date — so the two add-flows use different date math.
+
+Every subscription I inspected (including brand-new ones created today) shows four months of "Payment History" stretching into the past, even for a subscription that was just created with a start date of today. This makes the payment history feel like generic placeholder data rather than tied to the actual subscription record.
+
+Throughout the app, overdue items are labeled with negative day counts like "In -6 days" and "In -2 days" instead of something like "Overdue by 6 days." This appears on the dashboard, subscriptions list, and detail pages consistently.
+
+Clicking the notification bell icon on the dashboard navigates straight to the Settings page rather than opening any kind of notifications panel — the icon and behavior don't match.
+
+On page load, the dashboard briefly greets the user with "Good morning SubTrack" before correcting itself to "Good morning claude" once the profile data loads — a flash-of-placeholder-content issue.
+
+**UI/layout bugs**
+
+On the Subscriptions page, the category filter pills (Streaming, Software, etc.) render correctly as small horizontal pills normally, but stretch into tall, empty vertical boxes whenever the filtered list is short — for example when searching for "Netflix" or viewing the "Cancelled" tab (which has only one item). This looks like a flexbox stretching bug tied to list length.
+
+**Design observations (not necessarily bugs)**
+
+The Bills, Loans, and Category Budgets pages use a premium paywall that dims the underlying content rather than blurring or hiding it — actual dollar amounts and account details remain legible behind the "Unlock with Premium" overlay, which may undercut the intended paywall.
+
+**What worked well**
+
+Core CRUD operations (add, edit, delete subscriptions), the savings goal contribution flow, form validation with clear inline error messages, search and category filtering, the light/dark/system theme toggle, and mobile responsiveness all worked correctly and consistently. Math checked out everywhere I verified it (category totals, savings percentages, monthly-to-yearly conversions).
+
+I made one temporary test entry ("Test Gym Membership") and one temporary income change during testing, both of which I've cleaned up/reverted, so the dummy data is back to its original state.

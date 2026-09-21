@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://SubTrack-budget.replit.app/subtrack-deck/sitemap.xml

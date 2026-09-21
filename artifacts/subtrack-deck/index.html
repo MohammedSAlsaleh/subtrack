@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>SubTrack Deck — Subscription & Finance Tracking for Saudi Arabia</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Primary meta -->
+    <meta name="description" content="SubTrack is a subscription and finance tracking app built for Saudi Arabia. Track every SAR spent on subscriptions, bills, and BNPL loans. Full Arabic RTL support, VAT calculation, and savings goals." />
+    <meta name="keywords" content="SubTrack, subscription tracker, Saudi Arabia, SAR, finance app, BNPL, Tabby, Tamara, Arabic RTL, budget, savings goals, loans" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="SubTrack — Subscription & Finance Tracking for Saudi Arabia" />
+    <meta property="og:description" content="Master your recurring expenses with a modern, localized experience. Track subscriptions, bills, BNPL loans, and savings goals — built for the Saudi market with full Arabic RTL support." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://SubTrack-budget.replit.app/subtrack-deck/" />
+    <meta property="og:image" content="https://SubTrack-budget.replit.app/subtrack-deck/og-image.png" />
+    <meta property="og:site_name" content="SubTrack" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="ar_SA" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@SubTrackApp" />
+    <meta name="twitter:title" content="SubTrack — Subscription & Finance Tracking for Saudi Arabia" />
+    <meta name="twitter:description" content="Master your recurring expenses with a modern, localized experience. Track subscriptions, bills, BNPL loans, and savings goals — built for the Saudi market with full Arabic RTL support." />
+    <meta name="twitter:image" content="https://SubTrack-budget.replit.app/subtrack-deck/og-image.png" />
+    <meta name="twitter:image:alt" content="SubTrack app — subscription and finance tracker for Saudi Arabia showing the dashboard with spending breakdown in SAR" />
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "SubTrack",
+      "description": "Subscription and finance tracking app built for Saudi Arabia. Track subscriptions, bills, BNPL loans, budgets, and savings goals with full Arabic RTL support and SAR currency.",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "iOS, Android",
+      "offers": {
+        "@type": "Offer",
+        "price": "14.99",
+        "priceCurrency": "SAR",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "14.99",
+          "priceCurrency": "SAR",
+          "referenceQuantity": {
+            "@type": "QuantitativeValue",
+            "value": "1",
+            "unitCode": "MON"
+          }
+        }
+      },
+      "featureList": [
+        "Subscription tracking with 1000+ pre-filled brand logos",
+        "Automatic VAT calculation",
+        "Full RTL support for Arabic",
+        "SAR currency by default",
+        "Saudi bank integration",
+        "Savings goals with Hijri date support",
+        "BNPL tracking for Tabby and Tamara",
+        "Payoff simulators",
+        "Envelope budgeting with category caps",
+        "AI Spending Advisor",
+        "Biometric lock (FaceID/TouchID)",
+        "End-to-end encryption"
+      ],
+      "inLanguage": ["en", "ar"]
+    }
+    </script>
+
+    <!-- JSON-LD: site-level entity identity (WebSite + Organization) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://SubTrack-budget.replit.app/#organization",
+          "name": "SubTrack",
+          "url": "https://SubTrack-budget.replit.app/",
+          "logo": "https://SubTrack-budget.replit.app/subtrack-deck/favicon.svg",
+          "description": "Subscription and personal finance management app built for Saudi Arabia.",
+          "areaServed": "SA",
+          "knowsLanguage": ["en", "ar"]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://SubTrack-budget.replit.app/#website",
+          "url": "https://SubTrack-budget.replit.app/",
+          "name": "SubTrack",
+          "publisher": { "@id": "https://SubTrack-budget.replit.app/#organization" }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Fonts (async to avoid render-blocking) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" media="print" onload="this.media='all'"
+          href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;0,14..32,900&display=swap" />
+    <noscript>
+      <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;0,14..32,900&display=swap" />
+    </noscript>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!--
+      Static HTML content for search engines, social bots, and AI crawlers.
+      This content is visually hidden but fully readable by crawlers that do not execute JavaScript.
+    -->
+    <noscript>
+      <main>
+        <h1>SubTrack — Subscription &amp; Finance Tracking for Saudi Arabia</h1>
+        <p>Master your recurring expenses with a modern, localized experience built for the Saudi market.</p>
+
+        <article>
+          <h2>Subscription Fatigue — The Problem We Solve</h2>
+          <ul>
+            <li>Recurring charges are hard to track across multiple services</li>
+            <li>Free trials silently turn into paid subscriptions</li>
+            <li>Global apps miss local SAR pricing and VAT</li>
+            <li>No unified view of bills, subscriptions, and loans</li>
+          </ul>
+        </article>
+
+        <article>
+          <h2>Full Financial Visibility — The SubTrack Solution</h2>
+          <ul>
+            <li>Every subscription, bill, and loan in one place</li>
+            <li>Saudi-specific localizations including SAR and VAT</li>
+            <li>Active monitoring and smart alerts</li>
+            <li>Budgeting tools built for what matters to you</li>
+          </ul>
+        </article>
+
+        <article>
+          <h2>Built for the Kingdom — Localized for Saudi Arabia</h2>
+          <ul>
+            <li>Full RTL (right-to-left) support in Arabic</li>
+            <li>SAR currency by default</li>
+            <li>Saudi bank integration</li>
+            <li>Local brands pre-loaded: Shahid, STC, and more</li>
+          </ul>
+        </article>
+
+        <article>
+          <h2>Smart Subscription Tracking</h2>
+          <p>Automatically identify and categorize your spending.</p>
+          <ul>
+            <li>1000+ pre-filled brand logos</li>
+            <li>Automatic VAT calculation</li>
+            <li>Flexible billing cycles</li>
+            <li>Multi-device sync</li>
+          </ul>
+        </article>
+
+        <article>
+          <h2>Insightful Analytics</h2>
+          <p>Visualize where your money goes every month.</p>
+          <ul>
+            <li>Spending by category</li>
+            <li>Monthly vs. yearly trends</li>
+            <li>Income-to-spend ratio</li>
+            <li>Predictive future costs</li>
+          </ul>
+        </article>
+
+        <article>
+          <h2>Envelope Budgeting</h2>
+          <p>Stop overspending with proactive limits.</p>
+          <ul>
+            <li>Category-specific spending caps</li>
+            <li>Real-time usage tracking</li>
+            <li>Roll-over budget options</li>
+            <li>Custom budget periods</li>
+          </ul>
+        </article>
+
+        <article>
+          <h2>Savings Goals</h2>
+          <p>Save for what matters most.</p>
+          <ul>
+            <li>Visual progress tracking</li>
+            <li>Milestone celebrations</li>
+            <li>Auto-calculates daily savings needed</li>
+            <li>Hijri date support for goal deadlines</li>
+          </ul>
+        </article>
+
+        <article>
+          <h2>Loans &amp; Installments (BNPL)</h2>
+          <p>Track BNPL services like Tabby and Tamara, plus bank loans.</p>
+          <ul>
+            <li>Payoff simulators</li>
+            <li>Interest and APR tracking</li>
+            <li>Remaining balance view</li>
+            <li>Monthly installment alerts</li>
+          </ul>
+        </article>
+
+        <article>
+          <h2>Never Miss a Payment — Alerts &amp; Reminders</h2>
+          <p>Proactive notifications before you get charged.</p>
+          <ul>
+            <li>Trial expiration warnings</li>
+            <li>Renewal alerts 1, 3, and 7 days in advance</li>
+            <li>Over-budget notifications</li>
+            <li>Low balance predictors</li>
+          </ul>
+        </article>
+
+        <article>
+          <h2>Privacy First</h2>
+          <p>Your financial data is your business.</p>
+          <ul>
+            <li>Biometric lock with FaceID and TouchID</li>
+            <li>We never sell your data</li>
+            <li>End-to-end encryption</li>
+            <li>Minimal data collection</li>
+          </ul>
+        </article>
+
+        <article>
+          <h2>SubTrack Premium — SAR 14.99 per month</h2>
+          <ul>
+            <li>Unlimited subscriptions</li>
+            <li>Bank sync</li>
+            <li>Priority support</li>
+            <li>Advanced analytics</li>
+            <li>Savings goals</li>
+            <li>Family sharing</li>
+          </ul>
+        </article>
+
+        <article>
+          <h2>The Future of SubTrack — Roadmap</h2>
+          <ul>
+            <li>AI Spending Advisor</li>
+            <li>Family group tracking</li>
+            <li>Desktop and Web version</li>
+            <li>Open Banking 2.0</li>
+          </ul>
+        </article>
+
+        <article>
+          <h2>Start Tracking Today</h2>
+          <p>SubTrack is available on iOS and Android. Download now and take control of your subscriptions and finances.</p>
+        </article>
+      </main>
+    </noscript>
+
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

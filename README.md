@@ -3,7 +3,7 @@
   <h1>SubTrack</h1>
   <p><strong>Your subscriptions, bills, and financial goals in one place.</strong></p>
   <p>A personal finance app built around Saudi Riyal spending, with Arabic and English support.</p>
-  <p><a href="https://subtrack-budget.replit.app/">Open the live app</a> · <a href="docs/README.md">Explore the documentation</a> · <a href="GITHUB_UPLOAD_GUIDE.md">Setup guide</a></p>
+  <p><a href="https://subtrack-budget.replit.app/">Open the live app</a> · <a href="docs/README.md">Explore the documentation</a> · <a href="#run-locally">Run locally</a></p>
 </div>
 
 ![SubTrack dashboard with monthly outflow and upcoming payments](docs/screenshots/dashboard.png)
@@ -70,7 +70,7 @@ In another terminal, configure the API environment and start it:
 pnpm --filter @workspace/api-server run dev
 ```
 
-The API requires `PORT`, `DATABASE_URL`, `SESSION_SECRET`, `AI_INTEGRATIONS_OPENAI_BASE_URL`, and `AI_INTEGRATIONS_OPENAI_API_KEY`, plus database schema setup. Keep secret values outside Git. See the [setup guide](GITHUB_UPLOAD_GUIDE.md#local-development-caveats) for environment details and Replit-specific caveats.
+The API requires `PORT`, `DATABASE_URL`, `SESSION_SECRET`, `AI_INTEGRATIONS_OPENAI_BASE_URL`, and `AI_INTEGRATIONS_OPENAI_API_KEY`, plus database schema setup. Keep secret values outside Git. Set these variables in the API process environment; the scripts do not automatically guarantee loading an `.env` file. The mobile `dev` script assumes Replit, so use the Expo command above for local development.
 
 ## Repository map
 
